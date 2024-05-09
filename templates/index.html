@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pet Show</title>
+  </head>
+  <body>
+    <h1>Our Pets</h1>
+    <ul>
+        {% for pet in pets %}
+          <li><img src="{{ url_for('static', filename=pet.image) }}" alt="{{ pet.name }}"> {{ pet.name }}</a></li>
+          <a href="{{ url_for('show_pet', pet_id=pet.id) }}">Learn More</a>
+        {% endfor %}
+      </ul>
+  </body>
+</html>
